@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -16,11 +16,33 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
+</ul> -->
 
-<div>
-  <label for="file">Upload a new file:</label>&nbsp;
-  <input type="file" id="file" (change)="uploadFile($event)">
+<div class="file-manager">
+  <h1>GoReact File Manager</h1>
+  <div class="upload-container">
+    <label for="file">Upload a new file:</label>&nbsp;
+    <input type="file" id="file" (change)="uploadFile($event)">
+  </div>
+  <main class="main-container">
+    <fieldset class="main-container__tree">
+      <legend>File Tree</legend>
+      <ul class="file-tree">
+        <li *ngFor="let file of files" (click)="onFileClick(file)" class="file-tree__item">
+          {{file.originalName}}
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset class="main-container__preview">
+      <legend>Preview</legend>
+      <!-- <div>
+        <img *ngIf="!selectedFile.isVideo" src="{{selectedFile.path}}" alt="Image preview">
+        <video *ngIf="!selectedFile.isVideo" src="{{selectedFile.path}}">
+          <source src="{{selectedFile.path}}">
+        </video>
+      </div> -->
+    </fieldset>
+  </main>
 </div>
 
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
