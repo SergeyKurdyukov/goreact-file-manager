@@ -4,5 +4,6 @@ export interface IFile {
   path: string;
   mimeType: string;
   size: number;
+  isVideo?: boolean;
 }
 
