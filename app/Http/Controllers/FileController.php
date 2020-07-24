@@ -39,10 +39,17 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        // $file = new File;
-        // $file->name = $request->name;
-        // $file->save();
+        $uploadedFile = $request->file('fileKey');
+        $path = $uploadedFile->store('media');
+
+        $file = new File;
+        $file->originalName = $uploadedFile->getClientOriginalName();
+        $file->extension = $uploadedFile->extension();
+        $file->path = $path;
+        $file->mimeType = $uploadedFile->getMimeType();
+        $file->size = $uploadedFile->getSize();
+        $file->save();
+        return response()->json($path);
     }
 
     /**
