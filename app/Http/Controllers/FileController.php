@@ -40,7 +40,7 @@ class FileController extends Controller
     public function store(Request $request)
     {
         $uploadedFile = $request->file('fileKey');
-        $path = $uploadedFile->store('media');
+        $path = $uploadedFile->store('public');
 
         $file = new File;
         $file->originalName = $uploadedFile->getClientOriginalName();
