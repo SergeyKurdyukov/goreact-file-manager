@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AppComponent implements OnInit {
   title = 'ui';
-  public files: IFile[];
+  public files: IFile[] = [];
   public selectedFile: IFile;
   public serverUrl = environment.serverUrl;
   private fileToUpload: File;
