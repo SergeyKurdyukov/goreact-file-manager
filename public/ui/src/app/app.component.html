@@ -38,9 +38,7 @@
       <legend>Preview</legend>
       <div *ngIf="selectedFile">
         <img *ngIf="!selectedFile.isVideo" src="{{serverUrl}}{{selectedFile.path}}" alt="Image preview">
-        <video *ngIf="selectedFile.isVideo">
-          <source src="{{selectedFile.path}}">
-        </video>
+        <video *ngIf="selectedFile.isVideo" src="{{serverUrl}}{{selectedFile.path}}" controls></video>
       </div>
       <p *ngIf="!selectedFile" class="no-preview">&#8592;&nbsp; Choose a file to see preview</p>
     </fieldset>
