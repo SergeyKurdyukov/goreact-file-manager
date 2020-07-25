@@ -1,13 +1,15 @@
 :host {
   height: 100%;
-  border: 1px solid red;
 }
+
+$border: 1px solid grey;
+$border-radius: 3px;
 
 .file-manager {
   margin: 50px 100px;
 
   .upload-container {
-    border: 1px solid grey;
+    border: $border;
     border-radius: 3px;
     margin-bottom: 20px;
     padding: 5px;
@@ -17,11 +19,15 @@
     display: flex;
 
     &__tree {
-      width: 30%; 
+      border: $border;
+      border-radius: $border-radius;
+      width: 30%;
     }
 
     &__preview {
-      width: 70%; 
+      border: $border;
+      border-radius: $border-radius;
+      width: 70%;
     }
   }
 }
@@ -34,4 +40,11 @@
   &__item {
     cursor: pointer;
   }
+  &__item:hover {
+    background-color: lightsteelblue;
+  }
+}
+
+.no-preview {
+  text-align: center;
 }

@@ -27,20 +27,22 @@
   <main class="main-container">
     <fieldset class="main-container__tree">
       <legend>File Tree</legend>
-      <ul class="file-tree">
+      <ul *ngIf="files.length" class="file-tree">
         <li *ngFor="let file of files" (click)="onFileClick(file)" class="file-tree__item">
           {{file.originalName}}
         </li>
       </ul>
+      <p *ngIf="!files.length">Upload at least one file &nbsp;&#8593;</p>
     </fieldset>
     <fieldset class="main-container__preview">
       <legend>Preview</legend>
-      <!-- <div>
-        <img *ngIf="!selectedFile.isVideo" src="{{selectedFile.path}}" alt="Image preview">
-        <video *ngIf="!selectedFile.isVideo" src="{{selectedFile.path}}">
+      <div *ngIf="selectedFile">
+        <img *ngIf="!selectedFile.isVideo" src="{{serverUrl}}{{selectedFile.path}}" alt="Image preview">
+        <video *ngIf="selectedFile.isVideo">
           <source src="{{selectedFile.path}}">
         </video>
-      </div> -->
+      </div>
+      <p *ngIf="!selectedFile" class="no-preview">&#8592;&nbsp; Choose a file to see preview</p>
     </fieldset>
   </main>
 </div>
