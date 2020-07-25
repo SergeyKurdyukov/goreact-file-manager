@@ -22,7 +22,7 @@
   <h1>GoReact File Manager</h1>
   <div class="upload-container">
     <label for="file">Upload a new file:</label>&nbsp;
-    <input type="file" id="file" (change)="uploadFile($event)">
+    <input type="file" id="file" (change)="uploadFile($event)" accept=".jpg, .mp4">
   </div>
   <main class="main-container">
     <fieldset class="main-container__tree">
@@ -37,7 +37,7 @@
     <fieldset class="main-container__preview">
       <legend>Preview</legend>
       <div *ngIf="selectedFile">
-        <img *ngIf="!selectedFile.isVideo" src="{{serverUrl}}{{selectedFile.path}}" alt="Image preview">
+        <img *ngIf="!selectedFile.isVideo" src="{{serverUrl}}{{selectedFile.path}}" alt="Image preview" class="image">
         <video *ngIf="selectedFile.isVideo" src="{{serverUrl}}{{selectedFile.path}}" controls></video>
       </div>
       <p *ngIf="!selectedFile" class="no-preview">&#8592;&nbsp; Choose a file to see preview</p>
