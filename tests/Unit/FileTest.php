@@ -1,12 +1,7 @@
 <?php
 
 namespace Tests\Unit;
-// namespace Tests\Feature;
 
-// use PHPUnit\Framework\TestCase;
-
-// use Illuminate\Foundation\Testing\RefreshDatabase;
-// use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\UploadedFile;
