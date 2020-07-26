@@ -16,9 +16,10 @@ class FileController extends Controller
     public function index()
     {
         $files = File::all();
-        foreach ($files as $file) {
-            echo $file->name;
-        }
+        // For debugging only
+        // foreach ($files as $file) {
+        //     echo $file->name;
+        // }
         return response()->json($files);
     }
 
