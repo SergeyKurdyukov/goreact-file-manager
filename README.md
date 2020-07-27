@@ -18,3 +18,6 @@ Angular is located in a `public\ui` folder. Uploaded files are located in a `pub
 7) You need to install Angular `npm install -g @angular/cli`
 8) To start web UI go to `/public/ui` and make: `ng serve --open`. The main page will be accessible here `http://localhost:4200/`
 9) To run tests make `php artisan test`
+
+### Demo:
+You can see the project video presentation in a file demo.mp4
