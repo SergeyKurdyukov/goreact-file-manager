@@ -20,4 +20,4 @@ Angular is located in a `public\ui` folder. Uploaded files are located in a `pub
 9) To run tests make `php artisan test`
 
 ### Demo:
-You can see the project video presentation in a file demo.mp4
+You can see a project video presentation in the file [demo.mp4](https://github.com/SergeyKurdyukov/goreact-file-manager/blob/master/demo.mp4) or by the [link](https://youtu.be/RJKz3H-snHk)
