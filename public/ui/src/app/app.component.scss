@@ -39,6 +39,10 @@ $border-radius: 3px;
 
   &__item {
     cursor: pointer;
+
+    &--active {
+      background-color: peachpuff;
+    }
   }
   &__item:hover {
     background-color: lightsteelblue;

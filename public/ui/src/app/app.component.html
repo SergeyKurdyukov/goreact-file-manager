@@ -8,7 +8,8 @@
     <fieldset class="main-container__tree">
       <legend>File Tree</legend>
       <ul *ngIf="files.length" class="file-tree">
-        <li *ngFor="let file of files" (click)="onFileClick(file)" class="file-tree__item">
+        <li *ngFor="let file of files" (click)="onFileClick(file)" class="file-tree__item"
+            [ngClass]="{'file-tree__item--active': selectedFile && file.originalName === selectedFile.originalName}">
           {{file.originalName}}
         </li>
       </ul>
