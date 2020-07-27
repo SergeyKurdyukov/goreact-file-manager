@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
   encapsulation : ViewEncapsulation.ShadowDom,
 })
 export class AppComponent implements OnInit {
-  title = 'ui';
+
   public files: IFile[] = [];
   public selectedFile: IFile;
   public serverUrl = environment.serverUrl;
@@ -22,10 +22,7 @@ export class AppComponent implements OnInit {
 
   async ngOnInit() {
     this.files = await this.filesService.getList();
-    this.files = this.files.map(file => {
-      file.isVideo = file.extension === 'mp4';
-      return file;
-    });
+    this.files = this.prepareFiles(this.files);
   }
 
   public async uploadFile(event) {
@@ -33,10 +30,18 @@ export class AppComponent implements OnInit {
     const result = await this.filesService.upload(this.fileToUpload);
     console.log('AppComponent.uploadFile result:', result);
     this.files = await this.filesService.getList();
+    this.files = this.prepareFiles(this.files);
   }
 
   public onFileClick(file: IFile) {
     console.log('AppComponent.onFileClick file:', file);
     this.selectedFile = file;
+  }
+
+  private prepareFiles (files: IFile[]): IFile[] {
+    return files.map(file => {
+      file.isVideo = file.extension === 'mp4';
+      return file;
+    });
   }
 }
